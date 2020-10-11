@@ -30,7 +30,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
-#use twitter bootstrap library for frontend ui and layout
+#use twitter bootstrap library for front-end ui and layout
 gem 'bootstrap-sass', '3.3.7' 
 
 group :development do
