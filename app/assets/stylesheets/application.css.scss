@@ -17,10 +17,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
+//header fonts
 h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+//background gradients
 .navbar, .home-callout {
     //gradient provided by @_igosh
     background: #0F2027;  /* fallback for old browsers */
@@ -28,26 +31,18 @@ h1, h2, h3 {
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+//navbar styles
 .navbar {
     border: none;
 }
 
-.navbar-default .navbar-brand {
+//navbar text colours
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
     color: white;
-}
-
-.navbar-default .navbar-brand:hover {
-    color: white;
-    opacity: 0.75;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: white;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-    color: white;
-    opacity: 0.75;
+    &:hover { /*this only works in SASS, CSS doesn't allow this nesting. you'd have to make a whole new one with ".navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover" etc.*/
+        color: white;
+        opacity: 0.75;
+    }
 }
 
 .home-callout {
