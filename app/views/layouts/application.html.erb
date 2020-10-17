@@ -31,6 +31,12 @@
       </div>
     </nav>
 
+    <div class = "container"> <!-- generally wise to place flash messages here, in case you redirect users to different pages. i.e. when they do something on one page, you can now redirect them to any page and still display a message, not just on that page -->
+      <% flash.each do |type, msg| %> <!-- searches for |type, msg| key: value pair in the flash hash. 'type' is from the contacts controller, where you defined each one (success and danger) these key value pair names are arbitrary, i could've called them 'thelma' and 'louise' as long as i remained consistent -->
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+      <% end %>
+    </div>
+    
     <%= yield %>
 
     

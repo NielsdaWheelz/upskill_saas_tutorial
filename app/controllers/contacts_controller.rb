@@ -6,9 +6,11 @@ class ContactsController < ApplicationController
   def create #saves to db
     @contact = Contact.new(contact_params) #contact_params assigns all the values to all the attributes of the object (aka list)
     if @contact.save
-      redirect_to new_contact_path, notice: "Message sent" #if saved, send user back to the page with a message
+      flash[:success] = "Message sent"
+      redirect_to new_contact_path
     else
-      redirect_to new_contact_path, notice: "Error. Message not sent"
+      flash[:danger] = @contact.errors.full_messages.join(", ")
+      redirect_to new_contact_path
     end
   end
   
