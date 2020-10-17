@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new #now every time someone pulls up the page, rails will create a new Contact instance variable (list of blanks). can refer to this in the HTML
+    @contact = Contact.new #now every time someone pulls up the page, rails will create a new Contact instance variable (list of blanks). can refer to this in the HTML. The capital in 'Contact' tells rails to read the corresponding 'models' file
   end
   
   def create #saves to db
